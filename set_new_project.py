@@ -49,6 +49,14 @@ prints "Hello John Doe!"
 import name_of_package
 # or
 from name_of_package.backend.hello import print_hello_name
+
+## Miscellaneous
+
+This repo also contains a handy script to convert jupyter notebooks to easy versionnable versions.
+Jupyter notebooks are a pain with git. The script convert_jupyter.py will duplicate and remove all cells outputs of jupyter notebooks to make them versionable.
+
+- You need to install pandoc
+- You need to install nbconvert
 """
 
 if __name__ == "__main__":
