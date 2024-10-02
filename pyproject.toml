@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "PROJECT_NAME"
+version = "0.1.0"
+description = "PROJECT_NAME: DESCRIPTION"
+authors = [{ name = "FIRST_LAST_AUTHOR", email = "CONTACT_MAIL" }]
+dependencies = [
+    "tqdm",
+    "loguru",
+    "ipykernel"
+]
+requires-python = ">=3.8"
+
+[tool.setuptools]
+packages = ["PACKAGE_NAME"]
+package-dir = {"" = "src"}

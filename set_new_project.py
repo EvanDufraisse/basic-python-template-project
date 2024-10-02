@@ -73,12 +73,8 @@ if __name__ == "__main__":
     print("Project name: {}".format(project_name))
 
     # Ask for description
-    description = input("Long Description of your project: ")
+    description = input("Description of your project: ")
     print("Description: {}".format(description))
-
-    # Ask for short description
-    short_description = input("Short Description of your project: ")
-    print("Short Description: {}".format(short_description))
 
     # Ask name
     name = input("Your name (i.e. John Doe): ")
@@ -98,7 +94,9 @@ if __name__ == "__main__":
     packages = packages.split(",")
     packages = [package.strip() for package in packages]
 
-    with open(os.path.join(root_folder_of_project, "setup.py"), "r") as f:
+    # file = "setup.py"
+    file = "pyproject.toml"
+    with open(os.path.join(root_folder_of_project, file), "r") as f:
         setup_file = f.read()
 
     with open(os.path.join(root_folder_of_project, "src", "PACKAGE", "main.py"), "r") as f:
@@ -112,7 +110,6 @@ if __name__ == "__main__":
 
     setup_file = setup_file.replace("PACKAGE_NAME", package_name)
     setup_file = setup_file.replace("PROJECT_NAME", project_name)
-    setup_file = setup_file.replace("SHORT_DESCRIPTION", short_description)
     setup_file = setup_file.replace("DESCRIPTION", description)
     setup_file = setup_file.replace("FIRST_LAST_AUTHOR", name)
     setup_file = setup_file.replace("CONTACT_MAIL", mail)
@@ -130,14 +127,13 @@ if __name__ == "__main__":
 
     setup_file = setup_file.replace("PACKAGES", packages_str)
 
-    with open(os.path.join(root_folder_of_project, "setup.py"), "w") as f:
+    with open(os.path.join(root_folder_of_project, file), "w") as f:
         f.write(setup_file)
 
     # with open(os.path.join(root_folder_of_project, "README.md"), "r") as f:
     #     readme_file = f.read()
     readme_file = default_string_readme
     readme_file = readme_file.replace("PROJECT_NAME", project_name)
-    readme_file = readme_file.replace("SHORT_DESCRIPTION", short_description)
     readme_file = readme_file.replace("DESCRIPTION", description)
     readme_file = readme_file.replace("name_of_package", package_name)
 
