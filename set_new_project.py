@@ -32,6 +32,7 @@ Then install the package with the following command in the root folder of the pr
 
 ```bash
 pip install -e ./
+# -e stems for editable, meaning that you can modify the code and the changes will be taken into account dynamically
 ```
 
 ## Usage
