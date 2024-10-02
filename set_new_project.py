@@ -36,11 +36,19 @@ pip install -e ./
 
 ## Usage
 
+#### CLI usage
+
 ```bash
 python ./src/name_of_package/main.py "John Doe"
 ```
 prints "Hello John Doe!"
 
+#### Python usage
+
+```python
+import name_of_package
+# or
+from name_of_package.backend.hello import print_hello_name
 """
 
 if __name__ == "__main__":
@@ -122,6 +130,7 @@ if __name__ == "__main__":
     readme_file = readme_file.replace("PROJECT_NAME", project_name)
     readme_file = readme_file.replace("SHORT_DESCRIPTION", short_description)
     readme_file = readme_file.replace("DESCRIPTION", description)
+    readme_file = readme_file.replace("name_of_package", package_name)
 
     with open(os.path.join(root_folder_of_project, "README.md"), "w") as f:
         f.write(readme_file)
